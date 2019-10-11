@@ -1,0 +1,20 @@
+# frozen_string_literal: true
+
+# class test
+class House
+  # attr_accessor :humans, :pets
+  # attr_accessor :humans
+
+  def initialize
+    @hum = 4
+  end
+
+  def count_humans
+    puts 'Number of humans:'
+    puts @hum
+  end
+end
+
+h1 = House.new
+
+h1.count_humans
