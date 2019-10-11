@@ -25,7 +25,7 @@ class LinkedList
     elsif !object.next_node.nil?
       add(number, object.next_node)
     else
-      object.next_node = Node.new(number, nil)
+      object.next_node = Node.new(number)
     end
   end
 
@@ -39,11 +39,11 @@ class LinkedList
     end
   end
 
-  def remove(index, counter = index - 1, object = @node)
-    if index.zero?
+  def remove(index, object = @node)
+    if (index - 1).negative?
       @node = @node.next_node
-    elsif !counter.zero?
-      remove(index, counter - 1, object.next_node)
+    elsif !(index - 1).zero?
+      remove(index - 1, object.next_node)
     else
       object.next_node = object.next_node.next_node
     end
@@ -69,10 +69,10 @@ list = LinkedList.new
 list.add(3)
 list.add(5)
 list.add_at(1, 11)
-# list.add_at(0, 13)
+list.add_at(0, 13)
 
-puts list.get(0)
+puts list.get(2)
 # => 11
 
-# puts list.get(3)
+puts list.get(3)
 # => 5
