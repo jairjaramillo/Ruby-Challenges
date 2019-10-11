@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Repl.it challenge: https://repl.it/student/submissions/8643145
+# Original challenge: https://repl.it/student/submissions/8643145
 # By Jair Jaramillo: https://github.com/jairjy
 
 # Creates a Node object containing a number and a slot for another node
