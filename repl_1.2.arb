@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Original challenge: https://repl.it/student/submissions/8567292
+# By Jair Jaramillo: https://github.com/jairjy
+
 # Creates a Node object containing a number and a slot for another node
 class Node
   attr_accessor :value, :next_node
