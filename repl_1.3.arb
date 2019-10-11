@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+# Start with your code from LinkedList challenge.
+
+# Creates a Stack linked list
+class Stack
+  def create
+    @item = 0
+  end
+
+  def push(number)
+    puts @item
+    # your code here
+  end
+
+  def pop
+    # your code here
+  end
+end
+
+stack = Stack.new
+stack.push(3)
+stack.push(5)
+puts stack.pop
+# => 5
+
+stack.push(2)
+stack.push(7)
+puts stack.pop
+# => 7
+
+puts stack.pop
+# => 2
+
+puts stack.pop
+# => 3
