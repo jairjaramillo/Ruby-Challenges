@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Original challenge: https://repl.it/student/submissions/8567292
-# By Jair Jaramillo: https://github.com/jairjy
+# By Jair Jaramillo:  https://github.com/jairjy
 
 # Creates a Node object containing a number and a slot for another node
 class Node
@@ -29,15 +29,13 @@ class LinkedList
     end
   end
 
-  def add_at(index, number, counter = index - 1, object = @node)
+  def add_at(index, number, object = @node)
     if index.zero?
-      temp = Node.new(number, @node)
-      @node = temp
-    elsif !counter.zero?
-      add_at(index, number, counter - 1, object.next_node)
-    else
-      temp = Node.new(number, object.next_node)
+      temp = Node.new(object.value, object.next_node)
+      object.value = number
       object.next_node = temp
+    else
+      add_at(index - 1, number, object.next_node)
     end
   end
 
@@ -71,10 +69,10 @@ list = LinkedList.new
 list.add(3)
 list.add(5)
 list.add_at(1, 11)
-list.add_at(0, 13)
+# list.add_at(0, 13)
 
-puts list.get(2)
+puts list.get(0)
 # => 11
 
-puts list.get(3)
+# puts list.get(3)
 # => 5
