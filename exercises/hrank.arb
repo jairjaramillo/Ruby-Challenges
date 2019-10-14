@@ -1,0 +1,37 @@
+# frozen_string_literal: true
+
+require 'cmath'
+require 'json'
+require 'stringio'
+
+s = 'feedthedog'
+
+arr = Array.new(CMath.sqrt(s.size).ceil) # columns
+
+s = s.split('')
+
+# puts arr.size
+
+# test = [1, 2, 3, 4]
+
+# # puts test.size
+
+# test.each do |i|
+#   test[i - 1] = 'awoo'
+# end
+
+# puts test
+
+# nums = Array.new(10) { |e| e = e * 2 }
+# puts "#{nums}"
+arr.size.times do |row|
+  arr[row] = Array.new(CMath.sqrt(s.size).floor) # rows
+end
+
+arr.size.times do |col|
+  arr[col].size.times do |row|
+    arr[col][row] = s.shift
+  end
+end
+
+arr.flatten
