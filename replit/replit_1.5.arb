@@ -37,10 +37,10 @@ class Stack
     val
   end
 
-  def min(object = @node, comp = @node.value)
-    comp = object.value unless comp < object.value
-    min(object.next_node, comp) unless object.next_node.nil?
-    comp
+  def min(object = @node, compi = @node.value)
+    compi = object.value if object.value < compi
+    min(object.next_node, compi) unless object.next_node.nil?
+    compi
   end
 end
 
