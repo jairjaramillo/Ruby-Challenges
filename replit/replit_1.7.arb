@@ -4,59 +4,20 @@
 # Original challenge: https://repl.it/student/submissions/8756754
 # By Jair Jaramillo:  https://github.com/jairjy
 
-# Start with your code from LinkedList challenge.
-
-# Creates a Node object containing a number and a slot for another node
-class Node
-  attr_accessor :value, :next_node
-
-  def initialize(value, next_node = nil)
-    @value = value
-    @next_node = next_node
-  end
-end
-
-# Creates a Stack linked list
-class Stack
-  def get
-    @node.value unless empty?
-  end
-
-  def empty?
-    @node.nil?
-  end
-
-  def push(number)
-    if empty?
-      @node = Node.new(number)
-    else
-      temp = Node.new(@node.value, @node.next_node)
-      @node.value = number
-      @node.next_node = temp
-    end
-  end
-
-  def pop
-    val = @node.value
-    @node = @node.next_node
-    val
-  end
-end
-
 # Creates a Stack linked list
 def balanced_brackets?(string)
-  stack = Stack.new
+  stack = []
   string = string.tr("a-zA-Z", '')
-  char = string.split('')
-  char.size.times do |x|
-    if char[x] == '(' || char[x] == '[' || char[x] == '{'
-      stack.push(char[x])
+  string = string.split('')
+  string.size.times do |x|
+    if string[x] == '(' || string[x] == '[' || string[x] == '{'
+      stack.push(string[x])
     else
       return false if stack.empty?
       top = stack.pop
-      return false if (top == '(' && char[x] != ')')
-      return false if (top == '{' && char[x] != '}')
-      return false if (top == '[' && char[x] != ']')
+      return false if (top == '(' && string[x] != ')')
+      return false if (top == '{' && string[x] != '}')
+      return false if (top == '[' && string[x] != ']')
     end
   end
   return true if stack.empty?
