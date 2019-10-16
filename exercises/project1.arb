@@ -1,6 +1,23 @@
-a = [1, 2, 3]
-puts a.size
+def maybeDo someProc
+  if rand(2) == 0
+    someProc.call
+  end
+end
 
-a.pop
+def twiceDo someProc
+  someProc.call
+  someProc.call
+end
 
-puts a.size
+def wink
+  puts '<wink>'
+end
+
+def glance
+  puts '<glance>'
+end
+
+maybeDo wink
+maybeDo glance
+twiceDo wink
+twiceDo glance
