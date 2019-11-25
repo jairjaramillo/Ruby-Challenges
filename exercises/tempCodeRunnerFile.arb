@@ -1,0 +1,3 @@
+a.size - 1).times do |x|
+    arra[x], arra[x + 1] = arra[x + 1], arra[x] if yield(arra[x], arra[x + 1]).positive?
+  en

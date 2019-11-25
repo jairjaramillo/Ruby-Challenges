@@ -1,20 +1,60 @@
 # frozen_string_literal: true
 
-# class test
-class House
-  # attr_accessor :humans, :pets
-  # attr_accessor :humans
+#
+# Excercise 1
+# #
 
-  def initialize
-    @hum = 4
-  end
+# def yield_with_return_value
+#   hello_world = yield
 
-  def count_humans
-    puts 'Number of humans:'
-    puts @hum
+#   puts hello_world + 4
+# end
+
+# yield_with_return_value do
+#   a = 40
+#   b = 30
+#   a + b
+# end
+
+# def awoo2
+#   a = 45
+#   b = 33
+#   yield(a + b)
+# end
+
+# awoo2 do |test|
+#   puts test + 4
+# end
+
+# #
+# # Excercise 2
+# #
+
+# def yield_with_arguments
+#   var1 = 100
+#   var2 = 250
+
+#   yield(var1, var2)
+# end
+
+# yield_with_arguments do |pass1, pass2|
+#   puts pass1 + pass2
+# end
+
+#
+# Excercise 3
+#
+
+def bubble_sort_by(arra)
+  (arra.size - 1).times do |x|
+    arra[x], arra[x + 1] = arra[x + 1], arra[x] if yield(arra[x], arra[x + 1]).positive?
   end
+  arra
 end
 
-h1 = House.new
+test = bubble_sort_by(["hello", "hey", "hi"]) do |left, right|
+  left.length - right.length
+end
 
-h1.count_humans
+print test
+puts
