@@ -1,10 +1,10 @@
-def maybeDo someProc
-  if rand(2) == 0
-    someProc.call
-  end
+# frozen_string_literal: true
+
+def maybeDo(someProc)
+  someProc.call if rand(2) == 0
 end
 
-def twiceDo someProc
+def twiceDo(someProc)
   someProc.call
   someProc.call
 end
