@@ -7,7 +7,6 @@ require 'stringio'
 def repeatedString(s, n) # rubocop:disable Naming/MethodName, Naming/UncommunicativeMethodParamName
   result = s
   counter = 0
-
   (n - s.size).times do
     counter = 0 if counter >= s.size
     result += s[counter]
