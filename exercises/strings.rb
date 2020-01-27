@@ -5,15 +5,11 @@ require 'stringio'
 
 # Complete the repeatedString function below.
 def repeatedString(s, n) # rubocop:disable Naming/MethodName, Naming/UncommunicativeMethodParamName
-  result = s
-  counter = 0
-  (n - s.size).times do
-    counter = 0 if counter >= s.size
-    result += s[counter]
-    counter += 1
-  end
+  remain = []
 
-  result.count('a')
+  (n % s.size).times { |i| remain.push s[i] }
+
+  (s.count('a') * (n / s.size)) + remain.count('a')
 end
 
 # fptr = File.open(ENV['OUTPUT_PATH'], 'w')
